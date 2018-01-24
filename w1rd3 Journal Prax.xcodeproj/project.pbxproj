@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		1BA73A4E20193A8000863E82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA73A4D20193A8000863E82 /* AppDelegate.swift */; };
-		1BA73A5020193A8000863E82 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA73A4F20193A8000863E82 /* ViewController.swift */; };
 		1BA73A5320193A8000863E82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BA73A5120193A8000863E82 /* Main.storyboard */; };
 		1BA73A5520193A8000863E82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BA73A5420193A8000863E82 /* Assets.xcassets */; };
 		1BA73A5820193A8000863E82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BA73A5620193A8000863E82 /* LaunchScreen.storyboard */; };
+		1BA73A6520193C9000863E82 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA73A6420193C9000863E82 /* Entry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1BA73A4A20193A8000863E82 /* w1rd3 Journal Prax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "w1rd3 Journal Prax.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BA73A4D20193A8000863E82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1BA73A4F20193A8000863E82 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1BA73A5220193A8000863E82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1BA73A5420193A8000863E82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1BA73A5720193A8000863E82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1BA73A5920193A8000863E82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1BA73A6420193C9000863E82 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +54,54 @@
 		1BA73A4C20193A8000863E82 /* w1rd3 Journal Prax */ = {
 			isa = PBXGroup;
 			children = (
-				1BA73A4D20193A8000863E82 /* AppDelegate.swift */,
-				1BA73A4F20193A8000863E82 /* ViewController.swift */,
-				1BA73A5120193A8000863E82 /* Main.storyboard */,
+				1BA73A6020193C1900863E82 /* UI */,
+				1BA73A6320193C4200863E82 /* View Controller */,
+				1BA73A6220193C3500863E82 /* Model Controller */,
+				1BA73A6120193C2C00863E82 /* Model */,
+				1BA73A5F20193C0D00863E82 /* Resources */,
+			);
+			path = "w1rd3 Journal Prax";
+			sourceTree = "<group>";
+		};
+		1BA73A5F20193C0D00863E82 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				1BA73A5420193A8000863E82 /* Assets.xcassets */,
 				1BA73A5620193A8000863E82 /* LaunchScreen.storyboard */,
 				1BA73A5920193A8000863E82 /* Info.plist */,
 			);
-			path = "w1rd3 Journal Prax";
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1BA73A6020193C1900863E82 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				1BA73A4D20193A8000863E82 /* AppDelegate.swift */,
+				1BA73A5120193A8000863E82 /* Main.storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		1BA73A6120193C2C00863E82 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1BA73A6420193C9000863E82 /* Entry.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1BA73A6220193C3500863E82 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		1BA73A6320193C4200863E82 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BA73A5020193A8000863E82 /* ViewController.swift in Sources */,
+				1BA73A6520193C9000863E82 /* Entry.swift in Sources */,
 				1BA73A4E20193A8000863E82 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,7 +315,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "w1rd3 Journal Prax/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/w1rd3 Journal Prax/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "flowers.w1rd3-Journal-Prax";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -289,7 +329,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "w1rd3 Journal Prax/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/w1rd3 Journal Prax/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "flowers.w1rd3-Journal-Prax";
 				PRODUCT_NAME = "$(TARGET_NAME)";
