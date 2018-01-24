@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Entry List Table View Controller-->
         <scene sceneID="md3-82-nN9">
             <objects>
-                <tableViewController id="Or0-Bk-Gzk" sceneMemberID="viewController">
+                <tableViewController id="Or0-Bk-Gzk" customClass="EntryListTableViewController" customModule="w1rd3_Journal_Prax" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="pJS-qF-dMV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,6 +26,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="idD-Mw-TL5" kind="show" identifier="cellSelected" id="uEZ-eY-NVe"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -48,20 +51,44 @@
         <!--Entry Page-->
         <scene sceneID="0ev-vE-gyt">
             <objects>
-                <viewController id="idD-Mw-TL5" sceneMemberID="viewController">
+                <viewController id="idD-Mw-TL5" customClass="EntryDetailViewController" customModule="w1rd3_Journal_Prax" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8J7-ab-nh8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rGo-6k-HBh">
+                                <rect key="frame" x="29" y="128" width="319" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="GeL-fX-bGH">
+                                <rect key="frame" x="36" y="235" width="300" height="373"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="YY6-Vx-VpF"/>
                     </view>
                     <navigationItem key="navigationItem" title="Entry Page" id="vDF-Yc-9g4">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="7x4-bp-sdf"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="7x4-bp-sdf">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="idD-Mw-TL5" id="ot8-K5-mmU"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="bodyTextView" destination="GeL-fX-bGH" id="6BK-X0-93m"/>
+                        <outlet property="titleTextField" destination="rGo-6k-HBh" id="yfG-Ws-Eyg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7xu-dz-4Wn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1492" y="-39"/>
+            <point key="canvasLocation" x="1405.5999999999999" y="-32.833583208395808"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1xh-Y5-xCp">
@@ -80,4 +107,7 @@
             <point key="canvasLocation" x="-305" y="-29"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="uEZ-eY-NVe"/>
+    </inferredMetricsTieBreakers>
 </document>
